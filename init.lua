@@ -941,7 +941,7 @@ require('lazy').setup({
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+    main = 'nvim-treesitter.config', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
@@ -1011,6 +1011,31 @@ require('lazy').setup({
     },
   },
 })
+
+-- Highlight things in diff mode
+vim.api.nvim_set_hl(0, 'DiffAdd', { bg = '#20303b' })
+vim.api.nvim_set_hl(0, 'DiffDelete', { bg = '#37222c' })
+vim.api.nvim_set_hl(0, 'DiffChange', { bg = '#1f2231' })
+vim.api.nvim_set_hl(0, 'DiffText', { bg = '#394b70' })
+vim.api.nvim_set_hl(0, 'DiffAdd', { bg = '#34462F' })
+vim.api.nvim_set_hl(0, 'DiffDelete', { bg = '#462F2F' })
+vim.api.nvim_set_hl(0, 'DiffChange', { bg = '#2F4146' })
+vim.api.nvim_set_hl(0, 'DiffText', { bg = '#463C2F' })
+
+-- vim.api.nvim_set_hl(0, 'DiffAdded', { fg = colors[3], bold = true })
+-- vim.api.nvim_set_hl(0, 'DiffRemoved', { fg = colors[2], bold = true })
+-- vim.api.nvim_set_hl(0, 'DiffChanged', { fg = colors[4], bold = true })
+--
+-- vim.api.nvim_set_hl(0, 'DiffviewWinSeparator', { fg = colors[9] })
+-- vim.api.nvim_set_hl(0, 'DiffviewDiffDelete', { fg = colors[9] })
+-- vim.api.nvim_set_hl(0, 'DiffviewFilePanelSelected', { fg = colors[6] })
+--
+-- vim.api.nvim_set_hl(0, 'DiffviewStatusAdded', { fg = colors[3], bold = true })
+-- vim.api.nvim_set_hl(0, 'DiffviewStatusUntracked', { fg = colors[8], bold = true })
+-- vim.api.nvim_set_hl(0, 'DiffviewStatusModified', { fg = colors[4], bold = true })
+-- vim.api.nvim_set_hl(0, 'DiffviewStatusRenamed', { fg = colors[3], bold = true })
+-- vim.api.nvim_set_hl(0, 'DiffviewStatusDeleted', { fg = colors[2], bold = true })
+-- vim.api.nvim_set_hl(0, 'DiffviewStatusIgnored', { fg = colors[9], bold = true })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
